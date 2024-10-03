@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Challenge</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #cipher-container {
+            margin-top: 100px;
+        }
+
+        input {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            padding: 10px;
+            width: 300px;
+            font-size: 18px;
+        }
+
+        #result {
+            display: none; /* Hide result initially */
+            margin-top: 20px;
+        }
+
+        #scavenger-hunt {
+            color: blue;
+            font-size: 24px;
+            animation: shake 0.5s infinite;
+            display: none; /* Hide shaking text initially */
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        #transparent-text {
+            color: rgba(255, 255, 255, 0.1); /* Very low opacity for transparency */
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cipher-container">
+        <h1 id="cipher-text">fyeylx banf tqwbfwnk tqwbfwnk jwmdbye lyf mwlmby tgax xyuzby lgaf cyly au w? cdax au w? cdyly we wx?</h1>
+        <input type="text" id="answer-input" placeholder="Type the secret code..." />
+        <div id="transparent-text">7</div>
+    </div>
+    <div id="result">
+        <img src="https://th.bing.com/th?q=Iism+School+App+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-XA&cc=KW&setlang=en&adlt=strict&t=1&mw=247" alt="School Logo" />
+        <div id="scavenger-hunt">Scavenger Hunt</div>
+    </div>
+    <script>
+        const secretCode = "RED CIRCLE";
+
+        document.getElementById('answer-input').addEventListener('input', function() {
+            if (this.value.toUpperCase() === secretCode) {
+                document.getElementById('result').style.display = 'block'; // Show result when the correct code is entered
+                document.getElementById('scavenger-hunt').style.display = 'block'; // Show scavenger hunt text
+            }
+        });
+    </script>
+</body>
+</html>
